@@ -33,7 +33,7 @@ unsigned long dma_tx_buf[DISPLAY_WIDTH*DISPLAY_HEIGTH] __attribute__((aligned(12
 //* Hétszegmenses dekóder.                                                    *
 //*****************************************************************************
 unsigned char bin2sevenseg[] = {
-	0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x6f, 0x07,
+	0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x6f, 0x38,
 	0x7f, 0x7d, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71
 };
 
@@ -265,7 +265,7 @@ int main()
 #if (ENABLE_MB_DCACHE != 0)
 			microblaze_flush_dcache();
 #endif
-			dma_mm2s_start(XPAR_AXIDMA_0_BASEADDR, dma_tx_buf + buffer_counter * BUFFER_OFFSET *2, DMA_TRANSFER_SIZE);
+			dma_mm2s_start(XPAR_AXIDMA_0_BASEADDR, dma_tx_buf + buffer_counter * BUFFER_OFFSET, DMA_TRANSFER_SIZE);
 			buffer_counter ++;
 			if (buffer_counter == 4 /2)
 				buffer_counter = 0;

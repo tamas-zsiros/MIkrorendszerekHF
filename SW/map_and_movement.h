@@ -5,8 +5,8 @@
 
 #define SNAKE_WIDHT 4
 #define SNAKE_HEIGHT 2
-#define FOOD_WIDHT 2
-#define FOOD_HEIGHT 2
+#define FOOD_WIDHT 3
+#define FOOD_HEIGHT 3
 
 typedef enum {
 	Up,
